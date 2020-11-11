@@ -8,6 +8,9 @@
     <title>Hello Students</title>
 </head>
 <body>
+<!--
+check if there is already an username saved as cookie and used it in the welcome page.
+otherwise use the form to get the username -->
     {{#if username }}
         <h1>Welcome {{ username }}!</h1>
         {{ else }}

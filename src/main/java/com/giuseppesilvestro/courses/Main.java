@@ -1,5 +1,7 @@
-package com.giuseppesilvestro;
+package com.giuseppesilvestro.courses;
 
+import com.giuseppesilvestro.courses.model.CourseIdeaDAO;
+import com.giuseppesilvestro.courses.model.SimpleCourseIdeaDAO;
 import spark.ModelAndView;
 import spark.template.handlebars.HandlebarsTemplateEngine;
 
@@ -10,6 +12,9 @@ import static spark.Spark.*;
 
 public class Main {
     public static void main(String[] args) {
+
+        CourseIdeaDAO dao = new SimpleCourseIdeaDAO();
+
         /*
         https://github.com/perwendel/spark-template-engines/tree/master/spark-template-handlebars
         this link will show how to use the handlebars template
