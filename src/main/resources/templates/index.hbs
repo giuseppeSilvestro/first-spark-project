@@ -8,12 +8,19 @@
     <title>Hello Students</title>
 </head>
 <body>
-    <h1>Welcome Students!</h1>
+<!--
+check if there is already an username saved as cookie and used it in the welcome page.
+otherwise use the form to get the username -->
+    {{#if username }}
+        <h1>Welcome {{ username }}!</h1>
+        {{ else }}
+        <!-- TODO: Add sign-in -->
+        <h1>Welcome Students!</h1>
+        <form action="/sign-in" method="post">
+            <input type="text" placeholder="What's your user name" name="username">
+            <button>Sign in</button>
+        </form>
+    {{/if}}
 
-    <!-- TODO: Add sign-in -->
-    <form action="/sign-in" method="post">
-        <input type="text" placeholder="What's your user name" name="username">
-        <button>Sign in</button>
-    </form>
 </body>
 </html>

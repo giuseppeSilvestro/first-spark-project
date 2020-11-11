@@ -15,12 +15,19 @@ public class Main {
         this link will show how to use the handlebars template
          */
         get("/", (request, response) -> {
-            return new ModelAndView(null, "index.hbs");
+            //create a new model to check and use the user's input saved as cookie
+            Map<String, String> model = new HashMap<>();
+            model.put("username", request.cookie("username"));
+            return new ModelAndView(model, "index.hbs");
         }, new HandlebarsTemplateEngine());
 
         post("/sign-in", (request, response) -> {
             Map<String, String> model = new HashMap<>();
-            model.put("username", request.queryParams("username"));
+            //extract the variable from the lambda and save it as a String. we will use this variable to
+            //set up a cookie so we can go around the stateless of the http protocol
+            String username = request.queryParams("username");
+            response.cookie("username", username);
+            model.put("username", username);
             return new ModelAndView(model, "sign-in.hbs");
         }, new HandlebarsTemplateEngine());
     }
