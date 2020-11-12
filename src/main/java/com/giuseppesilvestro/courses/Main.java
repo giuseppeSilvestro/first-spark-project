@@ -35,8 +35,9 @@ public class Main {
             String username = request.queryParams("username");
             response.cookie("username", username);
             model.put("username", username);
-            return new ModelAndView(model, "sign-in.hbs");
-        }, new HandlebarsTemplateEngine());
+            response.redirect("/");
+            return null;
+        });
 
         get("/ideas", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
