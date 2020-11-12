@@ -5,7 +5,11 @@
         {{#each ideas}}
 <!-- Even though title field in CourseIdea object is private, Handlebars can access it because it understands#
 POJOs (Plain Old Java Object) and knows it has to call the getTitle method to access that variable. -->
-            <li>{{ title }}</li>
+            <li>
+                <form action="/ideas/{{slug}}/vote" method="post">
+                    {{ title }} ({{voteCount}} votes) <button>Vote</button>
+                </form>
+            </li>
         {{/each}}
     </ul>
 
