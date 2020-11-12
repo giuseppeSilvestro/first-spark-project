@@ -13,6 +13,9 @@ This will be our base template. The other files .hbs will replace the blocks -->
 </head>
 <body>
     <div class="page">
+    {{#if flashMessage}}
+        <p id="flash-message">{{ flashMessage }}</p>
+    {{/if}}
 {{/block}}
 
 {{#block "content"}}{{/block}}
