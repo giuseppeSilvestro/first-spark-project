@@ -3,7 +3,9 @@ package com.giuseppesilvestro.courses.model;
 import com.github.slugify.Slugify;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 public class CourseIdea {
@@ -35,6 +37,10 @@ public class CourseIdea {
 
     public String getCreator() {
         return creator;
+    }
+
+    public List<String> getVoters(){
+        return new ArrayList<>(voters);
     }
 
     public boolean addVoter(String voterUserName) {
