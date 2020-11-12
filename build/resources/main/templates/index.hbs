@@ -4,8 +4,10 @@ check if there is already an username saved as cookie and used it in the welcome
 otherwise use the form to get the username -->
     {{#if username }}
         <h1>Welcome {{ username }}!</h1>
+
+        <p>View <a href="/ideas">all course ideas</a>.</p>
         {{ else }}
-        <!-- TODO: Add sign-in -->
+
         <h1>Welcome Students!</h1>
         <form action="/sign-in" method="post">
             <input type="text" placeholder="What's your user name" name="username">
