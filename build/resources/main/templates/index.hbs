@@ -1,13 +1,4 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Hello Students</title>
-</head>
-<body>
+{{#partial "content" }}
 <!--
 check if there is already an username saved as cookie and used it in the welcome page.
 otherwise use the form to get the username -->
@@ -21,6 +12,6 @@ otherwise use the form to get the username -->
             <button>Sign in</button>
         </form>
     {{/if}}
+{{/partial}}
 
-</body>
-</html>
+{{> base.hbs}}
